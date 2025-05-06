@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:80"
+    networks:
+      - exam-network
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "4200:80"
+    networks:
+      - exam-network
+    depends_on:
+      - backend
+
+networks:
+  exam-network:
+    driver: bridge
