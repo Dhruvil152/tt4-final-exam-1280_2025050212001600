@@ -1,0 +1,22 @@
+<h2>Job Applications</h2>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f0f0f0;">
+      <th>ID</th>
+      <th>Company</th>
+      <th>Position</th>
+      <th>Status</th>
+      <th>Applied Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let app of applications">
+      <td>{{ app.id }}</td>
+      <td>{{ app.company }}</td>
+      <td>{{ app.position }}</td>
+      <td>{{ app.status }}</td>
+      <td>{{ app.appliedDate | date }}</td>
+    </tr>
+  </tbody>
+</table>
